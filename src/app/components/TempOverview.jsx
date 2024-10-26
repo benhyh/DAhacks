@@ -70,22 +70,38 @@ export default function TempOverview() {
   const sunset = today.sunset;
   const uvExposure = today.local_uv_irradiance_index;
 
+  let totalMin = 0;
+  let totalMax = 0;
+
+  const numDays = 7;
+
+  for (let i = 0; i < numDays; i++) {
+    const dayData = weatherData.soles[i];
+    totalMin += parseInt(dayData.min_temp);
+    totalMax += parseInt(dayData.max_temp);
+  }
+
+  const avgMin = parseInt(totalMin) / numDays;
+  const avgMax = parseInt(totalMax) / numDays;
+
   return (
     <>
       <div className="flex flex-col items-center justify-center" id="overview">
         <div className="flex flex-row text-[69px]">
           <span
-            className=" font-bold"
-            style={{ color: minTempColor }}
-          >
-            {minTempF}&deg;F
-          </span>
-          <span class="px-3">/</span>
-          <span
             className="font-bold"
             style={{ color: maxTempColor }}
           >
             {maxTempF}&deg;F
+          </span>
+
+          <span class="px-3">/</span>
+
+          <span
+            className=" font-bold"
+            style={{ color: minTempColor }}
+          >
+            {minTempF}&deg;F
           </span>
         </div>
 
@@ -96,6 +112,9 @@ export default function TempOverview() {
         <p><span className="label">Atmospheric Pressure:</span> {pressure} Pa <span style={{ color: pressureColor }}>({pressure_string})</span></p>
         <p><span className="label">Sunrise:</span> {formatTime(sunrise)} | <span className="label">Sunset:</span> {formatTime(sunset)}</p>
         <p><span className="label">UV Exposure:</span> {uvExposure}</p>
+
+        <p><span className="label">Average Highest Temp This Week:</span> {Math.round(celsiusToFahrenheit(avgMax))}°F</p>
+        <p><span className="label">Average Lowest Temp This Week:</span> {Math.round(celsiusToFahrenheit(avgMin))}°F</p>
       </div>
     </>
   );

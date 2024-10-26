@@ -58,7 +58,7 @@ export default function TempOverview() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center justify-center" id="overview">
         <span
           className="text-[69px] font-bold ml-5 mr-5"
           style={{ color: minTempColor }}

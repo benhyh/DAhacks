@@ -1,21 +1,28 @@
 /* Container for all cards */
 .cards-container {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping if cards don’t fit */
-    justify-content: center; /* Center-align horizontally */
-    gap: 20px; /* Add space between cards */
+    flex-wrap: wrap;
+    /* Allow wrapping if cards don’t fit */
+    justify-content: center;
+    /* Center-align horizontally */
+    gap: 20px;
+    /* Add space between cards */
     padding: 20px;
 }
 
 /* Style each card */
 .card {
-    display: flex; /* Make the card layout horizontal */
-    border: 1px solid red;
-    width: 13rem; /* Adjust width for a more compact card */
+    display: flex;
+    /* Make the card layout horizontal */
+    border: 1px solid #333;
+    width: 13rem;
+    /* Adjust width for a more compact card */
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    /* Dark shadow */
     overflow: hidden;
-    background-color: white;
+    background-color: #2d2d2d;
+    color: white;
     padding: 10px;
 }
 
@@ -25,7 +32,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-right: 15px; /* Add space between date and content */
+    margin-right: 15px;
+    /* Add space between date and content */
     font-weight: bold;
     font-size: 1.15rem;
 }
@@ -33,17 +41,19 @@
 /* Align image and temperature side by side */
 .content-container {
     display: flex;
-    align-items: center; /* Align vertically */
-    gap: 10px; /* Add space between image and info */
+    align-items: center;
+    /* Align vertically */
+    gap: 10px;
+    /* Add space between image and info */
 }
 
 /* Temperature content */
 .content {
     display: block;
-    border: 1px solid blue;
+    border: 1px solid #333;
     width: 6rem;
     padding: 8px;
-    background-color: #e0f7fa;
+    background-color: #3d3d3d;
     border-radius: 8px;
 }
 
@@ -56,7 +66,9 @@ img {
 /* Responsive Design */
 @media (max-width: 768px) {
     .card {
-        width: 90%; /* Full width on small screens */
-        flex-direction: column; /* Stack content vertically */
+        width: 90%;
+        /* Full width on small screens */
+        flex-direction: column;
+        /* Stack content vertically */
     }
 }

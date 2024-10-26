@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Model from "../components/Model";
 import TempOverview from "../components/TempOverview";
+import TemperatureCard from "../components/TemperatureCard";
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -32,6 +33,7 @@ export default function SpaceHero() {
       className={`relative min-h-screen`}
     >
       <TempOverview />
+      <TemperatureCard />
       <Model />
     </div>
   );

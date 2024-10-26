@@ -4,8 +4,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import WeatherCard from "../components/WeatherCard";
-
+import Model from "../components/Model";
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
 
@@ -50,7 +49,7 @@ export default function SpaceHero() {
           }}
         />
       ))}
-      <WeatherCard />
+      <Model />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import { Card, Image } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
 import "./tempCard.css";
+import { celsiusToFahrenheit } from "./WeatherData";
 
 export default function TemperatureCard() {
   const [weatherData, setWeatherData] = useState([]);
@@ -27,6 +28,9 @@ export default function TemperatureCard() {
     return `${month}/${day}`;
   };
 
+  const roundTemp = (temp) =>
+    temp ? Math.round(celsiusToFahrenheit(temp)) : "N/A";
+
   return (
     <div className="cards-container">
       {weatherData.map((day, index) => (
@@ -47,8 +51,8 @@ export default function TemperatureCard() {
               }
             />
             <div className="content">
-              <h3>{day.max_temp ?? "N/A"} °F</h3>
-              <h3>{day.min_temp ?? "N/A"} °F</h3>
+              <h3>{roundTemp(day.max_temp)} °F</h3>
+              <h3>{roundTemp(day.min_temp)} °F</h3>
             </div>
           </div>
         </Card>
@@ -56,3 +60,4 @@ export default function TemperatureCard() {
     </div>
   );
 }
+

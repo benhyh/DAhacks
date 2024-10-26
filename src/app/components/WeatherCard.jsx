@@ -1,15 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
-import {
-  Sun,
-  Cloud,
-  Umbrella,
-  Wind,
-  Code,
-  Rocket,
-  ChevronRight,
-} from "lucide-react";
+import { Sun, Cloud, Umbrella, Wind, Rocket, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@nextui-org/react";
 

@@ -4,6 +4,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Model from "../components/Model";
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -49,6 +50,7 @@ export default function SpaceHero() {
           }}
         />
       ))}
+      <Model />
     </div>
   );
 }

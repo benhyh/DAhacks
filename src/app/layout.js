@@ -1,5 +1,6 @@
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
+import StarsBackground from "./components/StarsBackground";
 
 export const metadata = {
   title: "Cosmos Explorer",
@@ -10,7 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextUIProvider>
+          <StarsBackground />
+          {children}
+        </NextUIProvider>
       </body>
     </html>
   );

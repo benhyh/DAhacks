@@ -66,6 +66,9 @@ export default function SpaceHero() {
           <MonthTemp />
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Averages...</div>}>
+          <TemperatureCard />
+        </Suspense>
+        <Suspense fallback={<div>Loading Temperature Averages...</div>}>
           <WeatherCard />
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Averages...</div>}>

@@ -61,9 +61,6 @@ export default function SpaceHero() {
           <MonthTemp />
         </Suspense>
 
-        <Suspense fallback={<div>Loading Weather Card...</div>}>
-          <WeatherCard />
-        </Suspense>
         <Suspense fallback={<div>Loading 3D Model...</div>}>
           <Model />
         </Suspense>

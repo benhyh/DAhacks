@@ -89,17 +89,19 @@ export default function TempOverview() {
       <div className="flex flex-col items-center justify-center" id="overview">
         <div className="flex flex-row text-[69px]">
           <span
-            className=" font-bold"
-            style={{ color: minTempColor }}
-          >
-            {minTempF}&deg;F
-          </span>
-          <span class="px-3">/</span>
-          <span
             className="font-bold"
             style={{ color: maxTempColor }}
           >
             {maxTempF}&deg;F
+          </span>
+
+          <span class="px-3">/</span>
+
+          <span
+            className=" font-bold"
+            style={{ color: minTempColor }}
+          >
+            {minTempF}&deg;F
           </span>
         </div>
 

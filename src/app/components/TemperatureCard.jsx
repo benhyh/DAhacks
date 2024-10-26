@@ -46,13 +46,13 @@ export default function TemperatureCard() {
               alt="weather logo"
               src={
                 day.atmo_opacity === "Sunny"
-                  ? "https://png.pngtree.com/png-clipart/20220719/original/pngtree-sun-icon-logo-png-png-image_8366229.png"
+                  ? "sun.png"
                   : "https://png.pngtree.com/element_our/20190528/ourmid/pngtree-cartoon-snowflake-icon-download-image_1147140.jpg"
               }
             />
             <div className="content">
-              <h3>{roundTemp(day.max_temp)} °F</h3>
-              <h3>{roundTemp(day.min_temp)} °F</h3>
+              <h3>{roundTemp(day.max_temp)}°F</h3>
+              <h3>{roundTemp(day.min_temp)}°F</h3>
             </div>
           </div>
         </Card>

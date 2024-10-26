@@ -1,5 +1,3 @@
-"use server";
-
 import React from "react";
 import { fetchWeatherData, celsiusToFahrenheit } from "./WeatherData";
 function formatDate(date) {
@@ -7,17 +5,8 @@ function formatDate(date) {
   return stuff[1] + "/" + stuff[2] + "/" + stuff[0];
 }
 
-export default function TempOverview() {
-  const [weatherData, setWeatherData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetchWeatherData().then((data) => setWeatherData(data));
-  }, []);
-
-  if (!weatherData) {
-    return null;
-  }
-
+export default async function TempOverview() {
+  const weatherData = await fetchWeatherData();
   const wData = weatherData.soles;
   const today = wData[0];
   const minTempF = Math.round(celsiusToFahrenheit(today.min_temp));
@@ -43,6 +32,7 @@ export default function TempOverview() {
             ? "#FFD700"
             : "#E74C3C";
   const terrestrialDate = today.terrestrial_date;
+  console.log(terrestrialDate);
   const avgTemp = (minTempF + maxTempF) / 2;
   let tempMessage = "";
   if (avgTemp < -80) {
@@ -60,7 +50,14 @@ export default function TempOverview() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center" id="overview">
+      <div className="card">
+        <h2>Highest Average Temperature:</h2>
+        <h3>{avgMax}</h3>
+        <h2>Lowest Average Temperature::</h2>
+        <h3>{avgMin}</h3>
+      </div>
+
+      <div className="flex flex-col items-center justify-center min-h-screen opacity-0 animate-fade-in">
         <span
           className="text-[69px] font-bold ml-5 mr-5"
           style={{ color: minTempColor }}

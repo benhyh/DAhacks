@@ -5,6 +5,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Model from "../components/Model";
+import TempOverview from "../components/TempOverview";
+import TemperatureCard from "../components/TemperatureCard";
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -28,28 +30,10 @@ export default function SpaceHero() {
 
   return (
     <div
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-purple-900 via-blue-900 to-black`}
+      className={`relative min-h-screen`}
     >
-      {stars.map((star) => (
-        <motion.div
-          key={star.id}
-          className="absolute bg-white rounded-full"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-          }}
-          animate={{
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: Math.random() * 3 + 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
-      ))}
+      <TempOverview />
+      <TemperatureCard />
       <Model />
     </div>
   );

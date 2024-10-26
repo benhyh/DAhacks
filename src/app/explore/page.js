@@ -7,13 +7,10 @@ import { motion } from "framer-motion";
 import Model from "../components/Model";
 import TempOverview from "../components/TempOverview";
 import TempAverages from "../components/TempAverages";
+import MonthTemp from '../components/MonthTemp'
 import WeatherCard from "../components/WeatherCard";
-<<<<<<< HEAD
 import SweaterCard from "../components/SweaterCard";
 import BobaCard from "../components/BobaCard";
-=======
-import TemperatureCard from "../components/TemperatureCard";
->>>>>>> d7c05fcbbc6c6d6f5312d068c164f671e65070e1
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -65,7 +62,7 @@ export default function SpaceHero() {
           <TempAverages />
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Card...</div>}>
-          <TemperatureCard />
+          <MonthTemp />
         </Suspense>
       </div>
       <Model />

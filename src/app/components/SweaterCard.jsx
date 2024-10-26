@@ -25,9 +25,9 @@ const SweaterCard = () => {
   };
 
   return (
-    <Card className="bg-white rounded-3xl shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 p-5 w-80 mx-auto text-center">
+    <Card className="bg-[#ffebcc] rounded-3xl shadow-lg p-5 w-80 mx-auto my-5 text-center font-sans transition-transform duration-300 hover:scale-105">
       <CardHeader>
-        <h3 className="text-2xl text-gray-800 mb-5">Sweater Recommendation</h3>
+        <h3 className="text-2xl text-[#d35400] mb-5">Sweater Recommendation</h3>
       </CardHeader>
       <CardBody>
         <input
@@ -38,7 +38,7 @@ const SweaterCard = () => {
           placeholder="Enter temperature"
         />
         <button
-          className="bg-blue-500 text-white border-none rounded-lg py-2.5 px-4 text-base cursor-pointer transition-colors duration-300 hover:bg-blue-600"
+          className="bg-[#f39c12] text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-[#e67e22]"
           onClick={calculateSweaters}
         >
           Get Recommendation

@@ -3,7 +3,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import StarsBackground from "./components/StarsBackground";
 
 export const metadata = {
-  title: "Cosmos Explorer",
+  title: "Mars Explorer",
   description: "DA Hacks 3.0 @ 2024",
 };
 

@@ -64,16 +64,17 @@ export default function SpaceHero() {
         <Suspense fallback={<div>Loading 3D Model...</div>}>
           <Model />
         </Suspense>
-        <Suspense fallback={<div>Loading BobaCard...</div>}>
-          <BobaCard />
-        </Suspense>
-        <Suspense fallback={<div>Loading SweaterCard...</div>}>
-          <SweaterCard />
-        </Suspense>
-
-        <Suspense fallback={<div>Loading MarsCardFlipper...</div>}>
-          <MarsCardFlipper />
-        </Suspense>
+        <div className="flex flex-row mt-24 gap-12 justify-center items-center">
+          <Suspense fallback={<div>Loading BobaCard...</div>}>
+            <BobaCard />
+          </Suspense>
+          <Suspense fallback={<div>Loading SweaterCard...</div>}>
+            <SweaterCard />
+          </Suspense>
+          <Suspense fallback={<div>Loading MarsCardFlipper...</div>}>
+            <MarsCardFlipper />
+          </Suspense>
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import React from 'react'
-import TemperatureCard from '../components/TemperatureCard'
+import MonthTemp from '../components/MonthTemp'
 
 
 const page = () => {
   return (
     <div>
-      <TemperatureCard />
+      <MonthTemp />
     </div>
   )
 }

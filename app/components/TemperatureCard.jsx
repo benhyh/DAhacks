@@ -7,12 +7,11 @@ export default function TemperatureCard() {
   const [weatherData, setWeatherData] = useState([]);
 
   const DataImport = async () => {
-    const api =
-      "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json";
+    const api = "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json";
     const response = await fetch(api);
     const data = await response.json();
     return data.soles.slice(0, 7); // Limit to 7 days
-  };
+  }
 
   useEffect(() => {
     DataImport()

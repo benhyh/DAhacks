@@ -1,0 +1,77 @@
+/* Container for the weather calendar */
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+  gap: 10px; /* Space between calendar cells */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+  
+  /* Each day (calendar cell) */
+  .calendar-cell {
+    display: flex;
+    border: 1px solid black;
+    width: 11rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  /* Month selector bar styling */
+  .month-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  /* Header for day name */
+  .day-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  /* Date styling */
+  .calendar-cell h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Weather information: temperature and icon */
+  .weather-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between temperature and icon */
+  }
+  
+  /* Temperature text styling */
+  .temperature {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff9800;
+    width: 4.5rem;
+  }
+  .block {
+    display: block;
+  }
+  /* Weather icon styling */
+  .weather-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .calendar-grid {
+      grid-template-columns: 1fr; /* Stack cells vertically on small screens */
+    }
+  }

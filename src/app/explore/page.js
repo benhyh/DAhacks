@@ -60,7 +60,7 @@ export default function SpaceHero() {
         <Suspense fallback={<div>Loading Monthly Temp...</div>}>
           <MonthTemp />
         </Suspense>
-
+        <div className="mt-24" />
         <Suspense fallback={<div>Loading 3D Model...</div>}>
           <Model />
         </Suspense>

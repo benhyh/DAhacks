@@ -60,7 +60,7 @@ export default function MarsExplorer() {
   };
 
   return (
-    <div className="relative flex flex-col lg:flex-row h-screen w-screen bg-gradient-to-b from-purple-900 via-blue-900 to-black overflow-hidden">
+    <div className="relative flex flex-col lg:flex-row h-screen w-screen overflow-hidden">
       <div className="w-full lg:w-2/3 p-4 z-10">
         <Card className="h-full bg-gray-900/50 backdrop-blur-sm flex items-center justify-center border border-gray-700">
           <Scene />

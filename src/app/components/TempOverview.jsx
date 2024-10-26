@@ -86,21 +86,18 @@ export default function TempOverview() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center" id="overview">
+      <div
+        className="flex flex-col items-center justify-center mt-24"
+        id="overview"
+      >
         <div className="flex flex-row text-[69px]">
-          <span
-            className="font-bold"
-            style={{ color: maxTempColor }}
-          >
+          <span className="font-bold" style={{ color: maxTempColor }}>
             {maxTempF}&deg;F
           </span>
 
           <span class="px-3">/</span>
 
-          <span
-            className=" font-bold"
-            style={{ color: minTempColor }}
-          >
+          <span className=" font-bold" style={{ color: minTempColor }}>
             {minTempF}&deg;F
           </span>
         </div>
@@ -109,15 +106,27 @@ export default function TempOverview() {
 
         <p className="text-2xl">{tempMessage}</p>
 
-        <p><span className="label">Atmospheric Pressure:</span> {pressure} Pa <span style={{ color: pressureColor }}>({pressure_string})</span></p>
-        <p><span className="label">Sunrise:</span> {formatTime(sunrise)} | <span className="label">Sunset:</span> {formatTime(sunset)}</p>
-        <p><span className="label">UV Exposure:</span> {uvExposure}</p>
+        <p>
+          <span className="label">Atmospheric Pressure:</span> {pressure} Pa{" "}
+          <span style={{ color: pressureColor }}>({pressure_string})</span>
+        </p>
+        <p>
+          <span className="label">Sunrise:</span> {formatTime(sunrise)} |{" "}
+          <span className="label">Sunset:</span> {formatTime(sunset)}
+        </p>
+        <p>
+          <span className="label">UV Exposure:</span> {uvExposure}
+        </p>
 
-        <p><span className="label">Average Highest Temp This Week:</span> {Math.round(celsiusToFahrenheit(avgMax))}°F</p>
-        <p><span className="label">Average Lowest Temp This Week:</span> {Math.round(celsiusToFahrenheit(avgMin))}°F</p>
+        <p>
+          <span className="label">Average Highest Temp This Week:</span>{" "}
+          {Math.round(celsiusToFahrenheit(avgMax))}°F
+        </p>
+        <p>
+          <span className="label">Average Lowest Temp This Week:</span>{" "}
+          {Math.round(celsiusToFahrenheit(avgMin))}°F
+        </p>
       </div>
     </>
   );
 }
-
-

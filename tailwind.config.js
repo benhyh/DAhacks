@@ -8,6 +8,9 @@ module.exports = {
   darkMode: ["class", "class"],
   theme: {
     extend: {
+      animation: {
+        'fade-in': 'fadeIn 1s ease-in forwards',
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -65,6 +68,10 @@ module.exports = {
       to: {
         backgroundPosition: "-200%, 0",
       },
+    },
+    fadeIn: {
+      "0%": { opacity: "0" },
+      "100%": { opacity: "1" },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { celsiusToFahrenheit } from "./WeatherData";
 import "./WeatherCalendar.css"; // Import the CSS
 
 export default function WeatherCalendar() {
@@ -38,7 +39,6 @@ export default function WeatherCalendar() {
       <>
           {/* Month Selector Bar */}
           <div className="month-selector">
-            <label htmlFor="month">Select Month:</label>
             <select id="month" onChange={handleMonthChange} value={selectedMonth}>
               <option value={0}>January</option>
               <option value={1}>February</option>
@@ -64,8 +64,8 @@ export default function WeatherCalendar() {
                 className="weather-icon"
               />
               <div className="block">
-                <p className="temperature">{day.max_temp ?? "N/A"} °F</p>
-                <p className="temperature">{day.min_temp ?? "N/A"} °F</p>
+                <p className="temperature">{Math.round(celsiusToFahrenheit(day.max_temp)) ?? "N/A"}°F</p>
+                <p className="temperature">{Math.round(celsiusToFahrenheit(day.min_temp)) ?? "N/A"}°F</p>
               </div>
             </div>
           </div>

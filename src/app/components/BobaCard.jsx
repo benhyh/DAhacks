@@ -27,32 +27,30 @@ const BobaCard = () => {
   };
 
   return (
-    <Card className="bg-[#ffebcc] rounded-3xl shadow-lg p-5 w-80 mx-auto my-5 text-center font-sans transition-transform duration-300 hover:scale-105">
+    <Card className="bg-gray-900/50 backdrop-blur-sm rounded-3xl shadow-lg p-5 w-80 mx-auto my-5 text-center font-sans transition-transform duration-300 hover:scale-105 border border-gray-700">
       <CardHeader>
-        <h3 className="text-2xl text-[#d35400] mb-5">
-          Boba Tea Recommendation
-        </h3>
+        <h3 className="text-2xl text-white mb-5">Boba Tea Recommendation</h3>
       </CardHeader>
       <CardBody>
-        <label className="text-base text-gray-600">
+        <label className="text-base text-gray-300">
           Enter temperature:
           <input
             type="number"
-            className="w-32 p-2.5 ml-2.5 border-2 border-[#d35400] rounded-lg text-base"
+            className="w-32 p-2.5 ml-2.5 border-2 border-gray-700 rounded-lg text-base bg-gray-800 text-white"
             value={temperature}
             onChange={(e) => setTemperature(e.target.value)}
             placeholder="Enter temperature"
           />
         </label>
         <button
-          className="bg-[#f39c12] text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-[#e67e22]"
+          className="bg-blue-600 text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-blue-700"
           onClick={calculateBoba}
         >
           Calculate
         </button>
       </CardBody>
       <CardFooter>
-        <p className="mt-5 text-lg text-[#27ae60]">
+        <p className="mt-5 text-lg text-green-400">
           {boba !== null && (
             <span>
               You need <strong>{boba}</strong> boba tea(s) to stay energized at{" "}

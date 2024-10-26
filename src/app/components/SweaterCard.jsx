@@ -13,7 +13,6 @@ const SweaterCard = () => {
     }
 
     const comfortTemp = 70; // Assume 70°F is the comfortable temp, every -10f-->plus one sweater
-
     let sweaterCount = 0;
 
     // Calculate how many sweaters based on temperature drop below comfortTemp
@@ -25,27 +24,30 @@ const SweaterCard = () => {
   };
 
   return (
-    <Card className="bg-[#ffebcc] rounded-3xl shadow-lg p-5 w-80 mx-auto my-5 text-center font-sans transition-transform duration-300 hover:scale-105">
+    <Card className="bg-gray-900/50 backdrop-blur-sm rounded-3xl shadow-lg p-5 w-80 mx-auto my-5 text-center font-sans transition-transform duration-300 hover:scale-105 border border-gray-700">
       <CardHeader>
-        <h3 className="text-2xl text-[#d35400] mb-5">Sweater Recommendation</h3>
+        <h3 className="text-2xl text-white mb-5">Sweater Recommendation</h3>
       </CardHeader>
       <CardBody>
-        <input
-          type="number"
-          className="w-28 p-2 my-2.5 border border-gray-300 rounded-lg text-base"
-          value={temperature}
-          onChange={(e) => setTemperature(e.target.value)}
-          placeholder="Enter temperature"
-        />
+        <label className="text-base text-gray-300">
+          Enter temperature:
+          <input
+            type="number"
+            className="w-32 p-2.5 ml-2.5 border-2 border-gray-700 rounded-lg text-base bg-gray-800 text-white"
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+            placeholder="Enter temperature"
+          />
+        </label>
         <button
-          className="bg-[#f39c12] text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-[#e67e22]"
+          className="bg-blue-600 text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-blue-700"
           onClick={calculateSweaters}
         >
-          Get Recommendation
+          Calculate
         </button>
       </CardBody>
       <CardFooter>
-        <p className="text-lg text-green-500">
+        <p className="mt-5 text-lg text-green-400">
           {sweaters !== null && (
             <span>
               You need <strong>{sweaters}</strong> sweater(s) to stay warm at{" "}

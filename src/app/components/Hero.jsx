@@ -58,7 +58,7 @@ export default function SpaceHero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          mars weather thing (placeholder name)
+          Explore Mars! 
         </motion.h1>
         <motion.p
           className="text-xl md:text-2xl text-blue-200 mb-8"

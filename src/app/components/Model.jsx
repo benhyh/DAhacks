@@ -10,24 +10,6 @@ import Scene from "./Scene";
 
 export default function MarsExplorer() {
   const [expandedSpot, setExpandedSpot] = useState(null);
-  const [stars, setStars] = useState([]);
-
-  useEffect(() => {
-    const generateStars = () => {
-      const newStars = [];
-      for (let i = 0; i < 100; i++) {
-        newStars.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: Math.random() * 2 + 1,
-        });
-      }
-      setStars(newStars);
-    };
-
-    generateStars();
-  }, []);
 
   const marsSpots = [
     {
@@ -79,26 +61,6 @@ export default function MarsExplorer() {
 
   return (
     <div className="relative flex flex-col lg:flex-row h-screen w-screen bg-gradient-to-b from-purple-900 via-blue-900 to-black overflow-hidden">
-      {stars.map((star) => (
-        <motion.div
-          key={star.id}
-          className="absolute bg-white rounded-full"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-          }}
-          animate={{
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: Math.random() * 3 + 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
-      ))}
       <div className="w-full lg:w-2/3 p-4 z-10">
         <Card className="h-full bg-gray-900/50 backdrop-blur-sm flex items-center justify-center border border-gray-700">
           <Scene />

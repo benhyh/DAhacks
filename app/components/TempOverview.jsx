@@ -1,39 +1,48 @@
-//Show average temperature in the month
-// Average high, average low, how many sunny/cloudy days
+import React from "react";
+import { fetchWeatherData, celsiusToFahrenheit } from "./WeatherData";
 
-import React, { useEffect } from "react";
-export default async function Card() {
-    const api = "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json";
-    const response = await fetch(api);
-    const data = await response.json();
+function formatDate(date) {
+  const stuff = date.split("-");
+  return stuff[1] + "/" + stuff[2] + "/" + stuff[0];
+}
 
-    const totalMin = 0;
-    const totalMax = 0;
+export default async function TempOverview() {
+  const weatherData = await fetchWeatherData();
+  const wData = weatherData.soles;
+  const today = wData[0];
 
-    const numDays = 7;
+  const minTempF = Math.round(celsiusToFahrenheit(today.min_temp));
+  const maxTempF = Math.round(celsiusToFahrenheit(today.max_temp));
 
-    for (let i = 0; i < numDays; i++) {
-        const dayData = days[i];
-        //console.log(JSON.stringify(dayData))
-        console.log("day " + dayData.terrestrial_date)
-        console.log("min " + dayData.min_temp)
-        totalMin += dayData.min_temp;
-        console.log("max " + dayData.max_temp)
-        totalMax += dayData.max_temp;
-        
-        let day = dayData.atmo_opacity;
-    }
-    
-    const avgMin = totalMin / numDays;
-    const avgMax = totalMax / numDays;
+  const minTempColor = minTempF < -80 ? "#6495ED" : minTempF < -40 ? "#87CEEB" : minTempF < 0 ? "#F7DC6F" : minTempF < 40 ? "#FFD700" : "#E74C3C";
+  const maxTempColor = maxTempF < -80 ? "#6495ED" : maxTempF < -40 ? "#87CEEB" : maxTempF < 0 ? "#F7DC6F" : maxTempF < 40 ? "#FFD700" : "#E74C3C";
+  const terrestrialDate = today.terrestrial_date;
+  console.log(terrestrialDate)
+
+  const avgTemp = (minTempF + maxTempF) / 2;
+  let tempMessage = "";
+
+  if (avgTemp < -80) {
+    tempMessage = "BRUH IT'S FREEZING: Don't even think about going outside! 🥶";
+  } else if (avgTemp < -40) {
+    tempMessage = "it do be kinda cold tho: bundle up, Martian! ❄️";
+  } else if (avgTemp < 0) {
+    tempMessage = "same old, same old: Mars is still pretty chilly ⚠️";
+  } else if (avgTemp < 40) {
+    tempMessage = "OMG IT'S WARM... just kidding, it's still cold 😂";
+  } else {
+    tempMessage = "WARM?!: is this a joke? Mars is never warm 🤣";
+  }
 
   return (
-    <div className="card">
-      <h2>Highest Average Temperature:</h2>
-      <h3>{avgMax}</h3>
-      <h2>Lowest Average Temperature::</h2>
-      <h3>{avgMin}</h3>
-    </div>
+    <>
+      <div className="text-center">
+        <span className="headerthing" style={{ color: minTempColor }}>{minTempF}&deg;F</span> to <span className="headerthing" style={{ color: maxTempColor }}>{maxTempF}&deg;F</span>
+        <p id="temp-message">{tempMessage}</p>
+        <small>as of {formatDate(terrestrialDate)}</small>
+      </div>
+    </>
   )
 }
+
 

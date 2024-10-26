@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Dress to Impress :3",
+  title: "Weather on Mars",
   description: "DA Hacks 3.0 @ 2024",
 };
 
@@ -22,14 +22,12 @@ import { NextUIProvider } from '@nextui-org/react';
 
 export default function RootLayout({ children }) {
   return (
-    <NextUIProvider>
-      <html  html lang="en">
+      <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
     </html>
-    </NextUIProvider>
   );
 }

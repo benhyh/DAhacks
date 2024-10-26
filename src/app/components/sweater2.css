@@ -1,0 +1,94 @@
+.card{/* Import a Google Font for a sleek, modern look */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+    /* Basic reset and font styling */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f9; /* Light gray background for a modern look */
+    }
+    
+    /* Card container styling */
+/* Card container styling with rounded corners */
+.card {
+    background-color: #ffffff;
+    border-radius: 200 px; /* Adjust the value for more or less rounding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    padding: 20px;
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-radius: 200 px; /* Maintain rounded corners on hover */
+}
+
+    /* Heading inside the card */
+    h3 {
+        font-size: 1.5rem;
+        color: #ffffff; /* Darker text for better contrast */
+        margin-bottom: 20px;
+    }
+    
+    /* Input styling */
+    input[type="number"] {
+        width: 100px;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+    
+    /* Button styling */
+    button {
+        background-color: #3498db; /* Bright blue button */
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
+    
+    /* Sweater recommendation text */
+    p {
+        font-size: 1.2rem;
+        color: hsl(0, 0%, 100%); /* Green for success */
+    }
+    
+    /* 3D Model styling (if using something like a canvas or WebGL) */
+    #mars-model {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+    }
+    
+    /* Small media query for responsiveness */
+    @media (max-width: 600px) {
+        .card {
+            width: 90%;
+            padding: 15px;
+        }
+    
+        h3 {
+            font-size: 1.2rem;
+        }
+    
+        button {
+            width: 100%;
+            padding: 12px;
+        }
+    }
+    
+
+}

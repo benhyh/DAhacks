@@ -1,0 +1,78 @@
+.card{/* Overall card container */
+    .card {
+        background-color: #ffebcc; /* Light orange background */
+        border-radius: 200 px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 320px;
+        margin: 20px auto;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Card title styling */
+    .card-title {
+        font-size: 1.8rem;
+        color: #d35400; /* A rich orange color for the title */
+        margin-bottom: 20px;
+    }
+    
+    /* Label for the input */
+    .card-label {
+        font-size: 1rem;
+        color: #555; /* Darker gray for better readability */
+    }
+    
+    /* Input field styling */
+    .input-field {
+        width: 120px;
+        padding: 10px;
+        margin-left: 10px;
+        border: 2px solid #d35400; /* Border matching the button color */
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+    
+    /* Button styling */
+    .calculate-btn {
+        background-color: #f39c12; /* Bright orange button */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .calculate-btn:hover {
+        background-color: #e67e22; /* Darker orange on hover */
+    }
+    
+    /* Result section styling */
+    .result {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #27ae60; /* Green for positive results */
+    }
+    
+    /* Responsive styling */
+    @media (max-width: 600px) {
+        .card {
+            width: 90%;
+            padding: 15px;
+        }
+    
+        .input-field {
+            width: 100%;
+        }
+    }
+    
+    
+}

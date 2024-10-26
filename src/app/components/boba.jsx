@@ -1,4 +1,6 @@
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
+import "./boba2.css"
+
 
 import React, { useState } from "react";
 
@@ -32,7 +34,7 @@ const BobaCard = () => {
             <h3>Mars Boba Recommender</h3>
             
             {/* Input for the user to enter the temperature */}
-            <label>
+            <label className="card">
                 Enter Temperature (°F):
                 <input
                     type="number"

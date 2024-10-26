@@ -1,5 +1,5 @@
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-
+import "./sweater2.css"
 
 import React, { useState } from "react";
 
@@ -32,8 +32,8 @@ const SweaterCard = () => {
             <h3>Mars Sweater Recommender</h3>
             
             {/* Input for the user to enter the temperature */}
-            <label>
-                Enter Temperature (°F):
+            <label className="card">
+            Enter Temperature (°F):
                 <input
                     type="number"
                     value={temperature}

@@ -1,7 +1,8 @@
 //Show average temperature in the month
 // Average high, average low, how many sunny/cloudy days
 
-import React, { useEffect } from "react";
+import React from "react";
+
 export default async function TempAverages() {
   const api =
     "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json";
@@ -14,15 +15,9 @@ export default async function TempAverages() {
   const numDays = 7;
 
   for (let i = 0; i < numDays; i++) {
-    const dayData = days[i];
-    //console.log(JSON.stringify(dayData))
-    console.log("day " + dayData.terrestrial_date);
-    console.log("min " + dayData.min_temp);
+    const dayData = data.soles[i];
     totalMin += dayData.min_temp;
-    console.log("max " + dayData.max_temp);
     totalMax += dayData.max_temp;
-
-    let day = dayData.atmo_opacity;
   }
 
   const avgMin = totalMin / numDays;
@@ -31,9 +26,9 @@ export default async function TempAverages() {
   return (
     <div className="card">
       <h2>Highest Average Temperature:</h2>
-      <h3>{avgMax}</h3>
-      <h2>Lowest Average Temperature::</h2>
-      <h3>{avgMin}</h3>
+      <h3>{avgMax.toFixed(2)}°C</h3>
+      <h2>Lowest Average Temperature:</h2>
+      <h3>{avgMin.toFixed(2)}°C</h3>
     </div>
   );
 }

@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import Model from "../components/Model";
 import TempOverview from "../components/TempOverview";
 import MonthTemp from "../components/MonthTemp";
-import WeatherCard from "../components/WeatherCard";
 import SweaterCard from "../components/SweaterCard";
 import BobaCard from "../components/BobaCard";
+import MarsCardFlipper from "../components/funfact";
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -69,6 +69,10 @@ export default function SpaceHero() {
         </Suspense>
         <Suspense fallback={<div>Loading SweaterCard...</div>}>
           <SweaterCard />
+        </Suspense>
+
+        <Suspense fallback={<div>Loading MarsCardFlipper...</div>}>
+          <MarsCardFlipper />
         </Suspense>
       </div>
     </div>

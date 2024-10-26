@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 // Define the array of topics (cards) to display
 const marsInfo = [
@@ -23,20 +23,31 @@ const MarsCardFlipper = () => {
       setCurrentCard((prevCard) => (prevCard + 1) % marsInfo.length);
     }, 5000);
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div style={{ perspective: '1000px', margin: '0 auto', width: '300px' }}>
-      <div style={{
-        width: '100%', height: '200px', 
-        border: '1px solid #ccc', padding: '20px',
-        textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        backgroundColor: '#f4f4f4', 
-        borderRadius: '8px', 
-      }}>
-        <div style={{ width: '100%', height: '100%' }}>
-          <p style={{ fontSize: '18px' }}>{marsInfo[currentCard]}</p>
+    <div style={{ perspective: "1000px", margin: "0 auto", width: "300px" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "200px",
+          border: "1px solid #4a5568",
+          padding: "20px",
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "rgba(17, 24, 39, 0.5)",
+          backdropFilter: "blur(8px)",
+          borderRadius: "24px",
+          color: "white",
+          boxShadow:
+            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        }}
+      >
+        <div style={{ width: "100%", height: "100%" }}>
+          <p style={{ fontSize: "18px" }}>{marsInfo[currentCard]}</p>
         </div>
       </div>
     </div>

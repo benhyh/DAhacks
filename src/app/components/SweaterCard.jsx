@@ -40,14 +40,14 @@ const SweaterCard = () => {
           />
         </label>
         <button
-          className="bg-blue-600 text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-blue-700"
+          className="bg-orange-600 text-white border-none rounded-lg py-3 px-5 text-base mt-5 cursor-pointer transition-colors duration-300 hover:bg-orange-700"
           onClick={calculateSweaters}
         >
           Calculate
         </button>
       </CardBody>
       <CardFooter>
-        <p className="mt-5 text-lg text-green-400">
+        <p className="mt-5 text-lg text-orange-400">
           {sweaters !== null && (
             <span>
               You need <strong>{sweaters}</strong> sweater(s) to stay warm at{" "}

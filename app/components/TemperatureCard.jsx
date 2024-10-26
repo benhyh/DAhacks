@@ -1,7 +1,9 @@
 //Show highest and lowest temperature throughout the week
 
+"use client"
+
 import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
-import React from "react";
+import React, {useState, useEffect} from "react";
  
 export default function TemperatureCard() {
   const [weatherData, setWeatherData] = useState([]);

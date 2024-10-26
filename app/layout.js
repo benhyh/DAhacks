@@ -22,14 +22,14 @@ import { NextUIProvider } from '@nextui-org/react';
 
 export default function RootLayout({ children }) {
   return (
-    <NextUIProvider>
-      <html  html lang="en">
+      <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NextUIProvider>
+          {children}
+        </NextUIProvider>
       </body>
     </html>
-    </NextUIProvider>
   );
 }

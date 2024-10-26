@@ -4,10 +4,12 @@ import TempOverview from '../components/TempOverview'
 
 const page = () => {
   return (
-    <div className="page">
+    <div className="page" style={{ backgroundImage: 'url(/mars.png)', backgroundSize: 'cover' }}>
       <TempOverview/>
     </div>
   )
 }
 
 export default page
+
+

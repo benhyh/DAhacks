@@ -1,9 +1,12 @@
+"use server";
+
 import React from "react";
 import { fetchWeatherData, celsiusToFahrenheit } from "./WeatherData";
 function formatDate(date) {
   const stuff = date.split("-");
   return stuff[1] + "/" + stuff[2] + "/" + stuff[0];
 }
+
 export default async function TempOverview() {
   const weatherData = await fetchWeatherData();
   const wData = weatherData.soles;

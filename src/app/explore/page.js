@@ -2,9 +2,12 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import Model from "../components/Model";
+import TempOverview from "../components/TempOverview";
+import TempAverages from "../components/TempAverages";
+import WeatherCard from "../components/WeatherCard";
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -50,6 +53,15 @@ export default function SpaceHero() {
           }}
         />
       ))}
+      <div className="z-10 flex flex-col items-center">
+        <Suspense fallback={<div>Loading Temperature Overview...</div>}>
+          <TempOverview />
+        </Suspense>
+        <Suspense fallback={<div>Loading Temperature Averages...</div>}>
+          <TempAverages />
+        </Suspense>
+        <WeatherCard />
+      </div>
       <Model />
     </div>
   );

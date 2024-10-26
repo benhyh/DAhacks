@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 import Model from "../components/Model";
 import TempOverview from "../components/TempOverview";
 import TempAverages from "../components/TempAverages";
-import WeatherCard from "../components/WeatherCard";
-import TemperatureCard from "../components/TemperatureCard";
+import MonthTemp from '../components/MonthTemp'
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -60,7 +59,7 @@ export default function SpaceHero() {
           <TempAverages />
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Card...</div>}>
-          <TemperatureCard />
+          <MonthTemp />
         </Suspense>
       </div>
       <Model />

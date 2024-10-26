@@ -9,10 +9,25 @@
 }
 
 body {
-  background-image: url('/mars.png');
-  background-size: cover;
+  background-image: url('/mars.jpg');
+  background-size: 150%;
+}
+
+@media (max-width: 975px) {
+  body {
+    background-size: cover;
+  }
 }
 
 #overview {
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 50px;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.label {
+  font-weight: 500;
 }

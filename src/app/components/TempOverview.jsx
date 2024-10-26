@@ -5,6 +5,13 @@ function formatDate(date) {
   return stuff[1] + "/" + stuff[2] + "/" + stuff[0];
 }
 
+function formatTime(time) {
+  const [hours, minutes] = time.split(":");
+  const period = parseInt(hours) < 12 ? "AM" : "PM";
+  const twelveHour = parseInt(hours) % 12 || 12;
+  return `${twelveHour}:${minutes.padStart(2, "0")} ${period}`;
+}
+
 export default function TempOverview() {
   const [weatherData, setWeatherData] = React.useState(null);
 
@@ -49,31 +56,46 @@ export default function TempOverview() {
   } else if (avgTemp < -40) {
     tempMessage = "it do be kinda cold tho: bundle up, Martian! ❄️";
   } else if (avgTemp < 0) {
-    tempMessage = "same old, same old: Mars is still pretty chilly ⚠️";
+    tempMessage = "same old, same old: Mars is still pretty chilly 😐";
   } else if (avgTemp < 40) {
     tempMessage = "OMG IT'S WARM... just kidding, it's still cold 😂";
   } else {
     tempMessage = "WARM?!: is this a joke? Mars is never warm 🤣";
   }
 
+  const pressure = today.pressure;
+  const pressure_string = today.pressure_string;
+  const pressureColor = pressure_string === "Higher" ? "#0F0" : "#F00"; // Dark green for Higher, dark red for Lower
+  const sunrise = today.sunrise;
+  const sunset = today.sunset;
+  const uvExposure = today.local_uv_irradiance_index;
+
   return (
     <>
       <div className="flex flex-col items-center justify-center" id="overview">
-        <span
-          className="text-[69px] font-bold ml-5 mr-5"
-          style={{ color: minTempColor }}
-        >
-          {minTempF}&deg;F
-        </span>{" "}
-        to{" "}
-        <span
-          className="text-[69px] font-bold ml-5 mr-5"
-          style={{ color: maxTempColor }}
-        >
-          {maxTempF}&deg;F
-        </span>
-        <p className="text-lg">{tempMessage}</p>
+        <div className="flex flex-row text-[69px]">
+          <span
+            className=" font-bold"
+            style={{ color: minTempColor }}
+          >
+            {minTempF}&deg;F
+          </span>
+          <span class="px-3">/</span>
+          <span
+            className="font-bold"
+            style={{ color: maxTempColor }}
+          >
+            {maxTempF}&deg;F
+          </span>
+        </div>
+
         <small>as of {formatDate(terrestrialDate)}</small>
+
+        <p className="text-2xl">{tempMessage}</p>
+
+        <p><span className="label">Atmospheric Pressure:</span> {pressure} Pa <span style={{ color: pressureColor }}>({pressure_string})</span></p>
+        <p><span className="label">Sunrise:</span> {formatTime(sunrise)} | <span className="label">Sunset:</span> {formatTime(sunset)}</p>
+        <p><span className="label">UV Exposure:</span> {uvExposure}</p>
       </div>
     </>
   );

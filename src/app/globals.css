@@ -10,13 +10,7 @@
 
 body {
   background-image: url('/mars.jpg');
-  background-size: 150%;
-}
-
-@media (max-width: 975px) {
-  body {
-    background-size: cover;
-  }
+  background-size: cover;
 }
 
 #overview {

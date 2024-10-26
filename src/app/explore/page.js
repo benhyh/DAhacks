@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Model from "../components/Model";
 import TempOverview from "../components/TempOverview";
 import TempAverages from "../components/TempAverages";
+import MonthTemp from "../components/MonthTemp";
 import WeatherCard from "../components/WeatherCard";
 import SweaterCard from "../components/SweaterCard";
 import BobaCard from "../components/BobaCard";
@@ -62,7 +63,7 @@ export default function SpaceHero() {
           <TempAverages />
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Averages...</div>}>
-          <TemperatureCard />
+          <MonthTemp />
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Averages...</div>}>
           <WeatherCard />

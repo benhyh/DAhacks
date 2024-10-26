@@ -8,6 +8,7 @@ import Model from "../components/Model";
 import TempOverview from "../components/TempOverview";
 import TempAverages from "../components/TempAverages";
 import WeatherCard from "../components/WeatherCard";
+import TemperatureCard from "../components/TemperatureCard";
 
 export default function SpaceHero() {
   const [stars, setStars] = useState([]);
@@ -57,6 +58,9 @@ export default function SpaceHero() {
         </Suspense>
         <Suspense fallback={<div>Loading Temperature Averages...</div>}>
           <TempAverages />
+        </Suspense>
+        <Suspense fallback={<div>Loading Temperature Card...</div>}>
+          <TemperatureCard />
         </Suspense>
       </div>
       <Model />

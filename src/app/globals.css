@@ -15,6 +15,16 @@ body {
   background-size: cover;
 }
 
+::selection {
+  background-color: #ff6600;
+  color: white;
+}
+
+::moz-selection {
+  background-color: #ff6600;
+  color: white;
+}
+
 #overview {
   color: white;
   background-color: rgba(17, 24, 39, 0.5);
